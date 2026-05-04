@@ -4,12 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nergis & Can</title>
+
 <meta property="og:type" content="website">
 <meta property="og:title" content="Nergis & Can">
 <meta property="og:description" content="Kına · 22 Mayıs · Erdal İnönü Parkı · Nikah · 23 Mayıs · Antalya Kartpostalı">
 <meta property="og:url" content="https://nergiscan.github.io/davetiye/">
-
-<!-- PREVIEW GÖRSEL -->
 <meta property="og:image" content="https://nergiscan.github.io/davetiye/davetiye.jpeg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
@@ -18,8 +17,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Nergis & Can">
 <meta name="twitter:description" content="Kına · 22 Mayıs · Erdal İnönü Parkı · Nikah · 23 Mayıs · Antalya Kartpostalı">
-<meta name="twitter:image" content="https://nergiscan.github.io/davetiye/davetiye.jpeg">,
-  
+<meta name="twitter:image" content="https://nergiscan.github.io/davetiye/davetiye.jpeg">
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
@@ -50,6 +49,7 @@ html,body{
   text-align:center;
 }
 
+/* COUNTDOWN */
 .countdown{
   display:flex;
   justify-content:center;
@@ -69,24 +69,40 @@ html,body{
   opacity:.7;
 }
 
+/* 🔥 BİREBİR KOPYA TYPO */
 .event-title{
-  font-size:12px;
-  letter-spacing:3px;
-  margin-bottom:10px;
+  font-family:'Montserrat',sans-serif;
+  font-size:13px;
+  font-weight:400;
+  letter-spacing:4px;
+  color:#5d4f30;
+  text-transform:uppercase;
+  margin-bottom:12px;
+  white-space:nowrap;
+}
+
+.event-title .dash{
+  margin:0 8px;
+  color:#8a7a4f;
 }
 
 .location-name{
   font-family:'Cormorant Garamond',serif;
-  font-size:22px;
-  margin-bottom:8px;
+  font-size:24px;
+  font-weight:400;
+  color:#5d4f30;
+  margin-bottom:10px;
 }
 
 .location-sub{
   font-size:10px;
-  opacity:.7;
+  letter-spacing:3px;
+  color:#8a7a4f;
   margin-bottom:24px;
+  text-transform:uppercase;
 }
 
+/* MAP */
 .map-wrap{
   max-width:420px;
   margin:0 auto 24px;
@@ -100,6 +116,7 @@ html,body{
   border:0;
 }
 
+/* BUTTON */
 .location-btn{
   display:inline-block;
   padding:12px 28px;
@@ -139,10 +156,10 @@ html,body{
       <div class="unit"><div class="num" id="seconds">00</div><div class="unit-label">Saniye</div></div>
     </div>
 
-    <div class="event-block">
-      <div class="event-title">Nikah<span class="dash">—</span>23 Mayıs 2026<span class="dash">—</span>18:00</div>
-      <div class="location-name">Antalya Kartpostalı</div>
-      <div class="location-sub">Muratpaşa / Antalya</div>
+    <!-- ✅ BİREBİR DOĞRU BLOK -->
+    <div class="event-title">Nikah<span class="dash">—</span>23 Mayıs 2026<span class="dash">—</span>18:00</div>
+    <div class="location-name">Antalya Kartpostalı</div>
+    <div class="location-sub">Muratpaşa / Antalya</div>
 
     <div class="map-wrap">
       <iframe src="https://maps.google.com/maps?q=36.86257483601452,30.726320613140093&hl=tr&z=17&output=embed"></iframe>
