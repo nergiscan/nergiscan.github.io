@@ -8,115 +8,103 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
+*{margin:0;padding:0;box-sizing:border-box}
 
-html, body {
-  font-family: 'Montserrat', sans-serif;
-  color: #6b5d3a;
-  background: #f2efde;
+html,body{
+  font-family:'Montserrat',sans-serif;
+  color:#6b5d3a;
+  background-image:url('bg-texture.jpeg');
+  background-repeat:repeat-y;
+  background-position:top center;
+  background-size:520px auto;
+  background-color:#f2efde;
 }
 
-/* TEXTURE HİLESİ */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: url('davetiye.png') center / cover no-repeat;
-  opacity: 0.08; /* kritik ayar */
-  filter: blur(6px);
-  z-index: -1;
+.page{
+  max-width:520px;
+  margin:0 auto;
 }
 
-.page {
-  max-width: 520px;
-  margin: 0 auto;
+.invite-image{
+  width:100%;
+  display:block;
 }
 
-/* ÜST GÖRSEL */
-.invite-wrap {
-  position: relative;
+.info{
+  padding:50px 28px 70px;
+  text-align:center;
 }
 
-.invite-image {
-  width: 100%;
-  display: block;
+.countdown{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  margin-bottom:50px;
 }
 
-/* GEÇİŞ */
-.fade {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 80px;
-  background: linear-gradient(to bottom, rgba(242,239,222,0), #f2efde);
+.unit{min-width:60px}
+
+.num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:34px;
 }
 
-/* ALT */
-.info {
-  padding: 50px 28px 70px;
-  text-align: center;
+.unit-label{
+  font-size:10px;
+  opacity:.7;
 }
 
-/* COUNTDOWN */
-.countdown {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-bottom: 50px;
+.event-title{
+  font-size:12px;
+  letter-spacing:3px;
+  margin-bottom:10px;
 }
 
-.num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 34px;
+.location-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;
+  margin-bottom:8px;
 }
 
-.unit-label {
-  font-size: 10px;
-  opacity: 0.7;
+.location-sub{
+  font-size:10px;
+  opacity:.7;
+  margin-bottom:24px;
 }
 
-/* TEXT */
-.event-title {
-  font-size: 12px;
-  letter-spacing: 3px;
-  margin-bottom: 10px;
+.map-wrap{
+  max-width:420px;
+  margin:0 auto 24px;
+  border:1px solid rgba(160,140,90,.25);
+  filter:sepia(.2) brightness(.98);
 }
 
-.location-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
-  margin-bottom: 8px;
+.map-wrap iframe{
+  width:100%;
+  height:220px;
+  border:0;
 }
 
-.location-sub {
-  font-size: 10px;
-  opacity: 0.7;
-  margin-bottom: 24px;
+.location-btn{
+  display:inline-block;
+  padding:12px 28px;
+  border:1px solid #b0a070;
+  text-decoration:none;
+  font-size:11px;
+  letter-spacing:3px;
+  color:#5d4f30;
+  transition:.25s;
 }
 
-/* MAP */
-.map-wrap {
-  max-width: 420px;
-  margin: 0 auto 24px;
-  border: 1px solid rgba(160,140,90,0.25);
-  filter: sepia(0.2) brightness(0.98);
+.location-btn:hover{
+  background:#b0a070;
+  color:#f2efde;
 }
 
-.map-wrap iframe {
-  width: 100%;
-  height: 220px;
-  border: 0;
-}
-
-/* BUTTON */
-.location-btn {
-  display: inline-block;
-  padding: 12px 28px;
-  border: 1px solid #b0a070;
-  text-decoration: none;
-  font-size: 11px;
-  letter-spacing: 3px;
-  color: #5d4f30;
+@media(max-width:420px){
+  .num{font-size:28px}
+  .countdown{gap:10px}
+  .map-wrap iframe{height:200px}
 }
 </style>
 </head>
@@ -125,18 +113,15 @@ body::before {
 
 <div class="page">
 
-  <div class="invite-wrap">
-    <img src="davetiye.png" class="invite-image">
-    <div class="fade"></div>
-  </div>
+  <img src="davetiye.png" class="invite-image">
 
   <div class="info">
 
     <div class="countdown">
-      <div><div class="num" id="days">00</div><div class="unit-label">Gün</div></div>
-      <div><div class="num" id="hours">00</div><div class="unit-label">Saat</div></div>
-      <div><div class="num" id="minutes">00</div><div class="unit-label">Dakika</div></div>
-      <div><div class="num" id="seconds">00</div><div class="unit-label">Saniye</div></div>
+      <div class="unit"><div class="num" id="days">00</div><div class="unit-label">Gün</div></div>
+      <div class="unit"><div class="num" id="hours">00</div><div class="unit-label">Saat</div></div>
+      <div class="unit"><div class="num" id="minutes">00</div><div class="unit-label">Dakika</div></div>
+      <div class="unit"><div class="num" id="seconds">00</div><div class="unit-label">Saniye</div></div>
     </div>
 
     <div class="event-title">Nikah — 23 Mayıs 2026 — 18:00</div>
@@ -155,21 +140,20 @@ body::before {
 </div>
 
 <script>
-const targetDate = new Date('2026-05-23T18:00:00+03:00').getTime();
+const targetDate=new Date('2026-05-23T18:00:00+03:00').getTime();
 
-function updateCountdown() {
-  const now = Date.now();
-  const diff = targetDate - now;
+function updateCountdown(){
+  const now=Date.now();
+  const diff=targetDate-now;
+  if(diff<=0)return;
 
-  if (diff <= 0) return;
-
-  days.textContent = String(Math.floor(diff / 86400000)).padStart(2,'0');
-  hours.textContent = String(Math.floor((diff % 86400000)/3600000)).padStart(2,'0');
-  minutes.textContent = String(Math.floor((diff % 3600000)/60000)).padStart(2,'0');
-  seconds.textContent = String(Math.floor((diff % 60000)/1000)).padStart(2,'0');
+  document.getElementById('days').textContent=String(Math.floor(diff/86400000)).padStart(2,'0');
+  document.getElementById('hours').textContent=String(Math.floor((diff%86400000)/3600000)).padStart(2,'0');
+  document.getElementById('minutes').textContent=String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
+  document.getElementById('seconds').textContent=String(Math.floor((diff%60000)/1000)).padStart(2,'0');
 }
 
-setInterval(updateCountdown, 1000);
+setInterval(updateCountdown,1000);
 updateCountdown();
 </script>
 
