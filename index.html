@@ -13,6 +13,7 @@
 html,body{
   font-family:'Montserrat',sans-serif;
   color:#6b5d3a;
+
   background-image:url('bg-texture.jpeg');
   background-repeat:repeat-y;
   background-position:top center;
@@ -25,11 +26,35 @@ html,body{
   margin:0 auto;
 }
 
-.invite-image{
+/* ÜST GÖRSEL + SOFT GEÇİŞ */
+.invite-wrap{
+  position:relative;
+}
+
+.invite-wrap img{
   width:100%;
   display:block;
 }
 
+/* YUMUŞAK FADE (FIXED) */
+.invite-wrap::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  height:140px;
+
+  background:linear-gradient(
+    to bottom,
+    rgba(242,239,222,0) 0%,
+    rgba(242,239,222,0.75) 60%,
+    #f2efde 100%
+  );
+  pointer-events:none;
+}
+
+/* ALT */
 .info{
   padding:50px 28px 70px;
   text-align:center;
@@ -113,7 +138,9 @@ html,body{
 
 <div class="page">
 
-  <img src="davetiye.png" class="invite-image">
+  <div class="invite-wrap">
+    <img src="davetiye.png">
+  </div>
 
   <div class="info">
 
